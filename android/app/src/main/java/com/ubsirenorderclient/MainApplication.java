@@ -1,4 +1,4 @@
-package com.ubsirenorderclient;
+package com.teatalksirenorder;
 
 import android.app.Application;
 

@@ -1,11 +1,19 @@
 import React, {Component} from "react";
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 
 export default class Splash extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {timer: 0}
+        // setInterval(() => {
+        //     this.setState({timer: this.state.timer + 1})
+        //     //console.Log(timer)
+        // }, 1000);
+    }
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>Hello, This is Splash</Text>
+                <Image style={styles.logo} source={require('../images/coffee.png')}></Image>
             </View>
         )
     }
@@ -19,8 +27,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     title: {
-        fotWeight: 'bold',
+        fontWeight: 'bold',
         fontSize: 18,
         color: 'black'
     }
-}
+})
