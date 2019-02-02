@@ -13,7 +13,7 @@ export default class Splash extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Image style={styles.logo} source={require('../images/coffee.png')}></Image>
+                <Image style={styles.logo} source={require('./../../images/coffee.png')}></Image>
             </View>
         )
     }

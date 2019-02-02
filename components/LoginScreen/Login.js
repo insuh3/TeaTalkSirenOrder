@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
     StyleSheet,
     Text,
@@ -10,9 +10,8 @@ import {
     TextInput,
     SafeAreaView,
     Keyboard,
-    KeyboardAvoidingView} from 'react-native';
-import InlineImage from './InlineImage';
-
+    KeyboardAvoidingView } from 'react-native';
+    
 export default class Login extends Component {
     render() {
         return (
