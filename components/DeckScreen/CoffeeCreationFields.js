@@ -7,11 +7,11 @@ import Input from "./../Input";
 
 import colors from "./../../styles/colors";
 
-class CreateDeckButton extends Component {
+class CreateCoffeeButton extends Component {
   render() {
     return (
       <Button style={styles.createDeck} onPress={this.props.onPress}>
-        <NormalText>Create Deck</NormalText>
+        <NormalText>신규 음료 추가</NormalText>
       </Button>
     );
   }
@@ -36,7 +36,7 @@ class EnterDeck extends Component {
             this.setState({ text });
           }}
         />
-        <CreateDeckButton onPress={this._create} />
+        <CreateCoffeeButton onPress={this._create} />
       </View>
     );
   }
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   createDeck: { backgroundColor: colors.green }
 });
 
-export { CreateDeckButton, EnterDeck };
+export { CreateCoffeeButton, EnterDeck };

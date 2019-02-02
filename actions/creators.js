@@ -8,10 +8,10 @@ import {
 } from "./types";
 
 import Card from "../data/Card";
-import Deck from "../data/Deck";
+import Coffee from "../data/Coffee";
 
 export const addDeck = name => {
-  return { type: ADD_DECK, data: new Deck(name) };
+  return { type: ADD_DECK, data: new Coffee(name) };
 };
 
 export const addCard = (front, back, deckID) => {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
-import DeckModel from "./../../data/Deck";
+import DeckModel from "./../../data/Coffee";
 import { addCard } from "./../../actions/creators";
 import { connect } from "react-redux";
 
@@ -11,7 +11,7 @@ import NormalText from "../NormalText";
 import colors from "./../../styles/colors";
 
 class NewCard extends Component {
-  static navigationOptions = { title: "Create Card" };
+  static navigationOptions = { title: "음료 추가" };
 
   static initialState = { front: "", back: "" };
 
@@ -71,7 +71,7 @@ class NewCard extends Component {
           </Button>
 
           <Button style={styles.secondaryButton} onPress={this._reviewDeck}>
-            <NormalText>Review Deck</NormalText>
+            <NormalText>Review Coffee</NormalText>
           </Button>
         </View>
       </View>

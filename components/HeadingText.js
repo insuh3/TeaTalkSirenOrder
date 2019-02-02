@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { fonts, scalingFactors } from "./../styles/fonts";
 import Dimensions from "Dimensions";
+
 let { width } = Dimensions.get("window");
 
 class HeadingText extends Component {

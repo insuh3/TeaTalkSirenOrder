@@ -8,7 +8,7 @@
 // import App from './App';
 
 // import Login from './components/LoginScreen/Login';
-// // import Deck from './components/DeckScreen/index';
+// // import Coffee from './components/DeckScreen/index';
 // import Splash from './components/SplashScreen/Splash';
 
 // import {name as appName} from './app.json';

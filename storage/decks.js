@@ -1,5 +1,5 @@
 import { AsyncStorage } from "react-native";
-import Deck from "./../data/Deck";
+import Coffee from "./../data/Coffee";
 export const DECK_KEY = "flashcards:decks";
 import { MockDecks } from "./../data/Mocks";
 
@@ -12,7 +12,7 @@ async function read(key, deserializer) {
       });
       return readValue;
     } else {
-      console.info(`${key} not found on disk.`);
+      console.info('${key} not found on disk.');
       return [];
     }
   } catch (error) {
@@ -29,7 +29,7 @@ async function write(key, item) {
 }
 
 export const readDecks = () => {
-  return read(DECK_KEY, Deck.fromObject);
+  return read(DECK_KEY, Coffee.fromObject);
 };
 
 export const writeDecks = decks => {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createMaterialTopTabNavigator, createStackNavigator, createAppContainer } from "react-navigation";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
@@ -16,7 +16,7 @@ import ReviewScreen from "./ReviewScreen";
 let store = createStore(reducer);
 
 let headerOptions = {
-  headerStyle: { backgroundColor: "#FFFFFF" },
+  headerStyle: { backgroundColor: 'black' },
   headerLeft: <Logo />
 };
 
@@ -25,7 +25,10 @@ readDecks().then(decks => {
   store.dispatch(loadData(decks));
 });
 
-const makeRootNavigator = createStackNavigator ({
+//Navigator를 이용하면, props를 함께 전달받음.
+
+  const makeRootNavigator = createMaterialTopTabNavigator ({
+  // const makeRootNavigator = createTabNavigator ({
   Home: { screen: DeckScreen, navigationOptions: headerOptions },
   Review: { screen: ReviewScreen, navigationOptions: headerOptions },
   CardCreation: {
@@ -35,16 +38,7 @@ const makeRootNavigator = createStackNavigator ({
   }
 });
 
-
-
 class App extends Component {
-  // render() {
-  //   return (
-  //     <Provider store={store}>
-  //       <Navigator />
-  //     </Provider>
-  //   );
-  // }
   render() {
    const Navigator = createAppContainer(makeRootNavigator);
    return (

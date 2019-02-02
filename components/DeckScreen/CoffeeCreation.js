@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
-import { CreateDeckButton, EnterDeck } from "./DeckCreationFields";
+import { CreateCoffeeButton, EnterDeck } from "./CoffeeCreationFields";
 
-class DeckCreation extends Component {
+class CoffeeCreation extends Component {
   constructor(props) {
     super(props);
     this.state = { showingNameField: false };
@@ -21,9 +21,9 @@ class DeckCreation extends Component {
   render() {
     let contents = this.state.showingNameField
       ? <EnterDeck create={this._newDeck} />
-      : <CreateDeckButton onPress={this._showField} />;
+      : <CreateCoffeeButton onPress={this._showField} />;
     return contents;
   }
 }
 
-export default DeckCreation;
+export default CoffeeCreation;

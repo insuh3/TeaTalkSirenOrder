@@ -1,17 +1,19 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { connect } from "react-redux";
 
 import { MockDecks } from "./../../data/Mocks";
 import { addDeck, reviewDeck } from "./../../actions/creators";
-import Deck from "./Deck";
-import DeckCreation from "./DeckCreation";
+
+import Coffee from "./Coffee";
+import CoffeeCreation from "./CoffeeCreation";
+
+import colors from "./../../styles/colors";
 
 class DecksScreen extends Component {
   static displayName = "DecksScreen";
-
-  static navigationOptions = { title: "All Decks" };
+  static navigationOptions = { title: "COFFEE" };
 
   _createDeck = name => {
     let createDeckAction = addDeck(name);
@@ -37,7 +39,7 @@ class DecksScreen extends Component {
 
     return this.props.decks.map(deck => {
       return (
-        <Deck
+        <Coffee
           deck={deck}
           count={this.props.counts[deck.id]}
           key={deck.id}
@@ -54,13 +56,17 @@ class DecksScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         {this._mkDeckViews()}
-        <DeckCreation create={this._createDeck} />
+        <CoffeeCreation create={this._createDeck} />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: { backgroundColor: colors.black, flex: 1, paddingTop: 24 }
+});
 
 const mapDispatchToProps = dispatch => {
   return {

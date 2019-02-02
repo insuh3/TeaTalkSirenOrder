@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
-import DeckModel from "./../../data/Deck";
+import DeckModel from "./../../data/Coffee";
 import Button from "./../Button";
 import NormalText from "./../NormalText";
 import colors from "./../../styles/colors";
 
-class Deck extends Component {
-  static displayName = "Deck";
+class Coffee extends Component {
+  static displayName = "Coffee";
 
-  _review = () => {
-    this.props.review();
-  };
+  constructor(props) {
+    super(props);
+    this.state = {count: 0};
+  }
+
+  _incrementCount() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+  // _review = () => {
+  //   this.props.review();
+  // };
 
   _addCards = () => {
     this.props.add();
@@ -20,14 +30,14 @@ class Deck extends Component {
   render() {
     return (
       <View style={styles.deckGroup}>
-        <Button style={styles.deckButton} onPress={this._review}>
+        <Button style={styles.deckButton} onPress={ () => this._incrementCount() }>
           <NormalText>
-            {this.props.deck.name}: {this.props.count} cards
+            {this.props.deck.name}: {this.state.count} 잔
           </NormalText>
         </Button>
 
         <Button style={styles.editButton} onPress={this._addCards}>
-          <NormalText>+</NormalText>
+          <NormalText>-</NormalText>
         </Button>
       </View>
     );
@@ -37,9 +47,10 @@ class Deck extends Component {
 const styles = StyleSheet.create({
   deckGroup: {
     flexDirection: "row",
-    alignItems: "stretch",
+    //alignItems: "stretch",
     padding: 10,
     marginBottom: 5
+    
   },
   deckButton: { backgroundColor: colors.pink, padding: 10, margin: 0, flex: 1 },
   editButton: {
@@ -56,4 +67,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Deck;
+
+export default Coffee;

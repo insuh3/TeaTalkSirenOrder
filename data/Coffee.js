@@ -1,6 +1,6 @@
 import md5 from "md5";
 
-class Deck {
+class Coffee {
   constructor(name) {
     this.name = name;
     this.id = md5("deck:" + name);
@@ -14,7 +14,7 @@ class Deck {
   }
 
   static fromObject(ob) {
-    let d = new Deck(ob.name);
+    let d = new Coffee(ob.name);
     d.setFromObject(ob);
     return d;
   }
@@ -24,4 +24,4 @@ class Deck {
   }
 }
 
-export default Deck;
+export default Coffee;

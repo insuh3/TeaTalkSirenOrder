@@ -1,5 +1,5 @@
 import CardModel from "./Card";
-import DeckModel from "./Deck";
+import DeckModel from "./Coffee";
 import { mkReviews } from "./QuizCardView";
 
 let MockCards = [
@@ -11,7 +11,7 @@ let MockCards = [
 
 let MockCard = MockCards[0];
 let MockReviews = mkReviews(MockCards);
-let MockDecks = [new DeckModel("French"), new DeckModel("German")];
+let MockDecks = [new DeckModel("아메리카노"), new DeckModel("헤이즐넛")];
 
 MockDecks.map(deck => {
   deck.addCard(new CardModel("der Hund", "the dog", deck.id));
