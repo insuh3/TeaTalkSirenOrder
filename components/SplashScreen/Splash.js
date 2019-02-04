@@ -1,7 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import {StyleSheet, Text, View, Image} from 'react-native';
 
-export default class Splash extends Component {
+import colors from "./../../styles/colors";
+
+export default class Splash extends React.Component {
     constructor(props) {
         super(props)
         this.state = {timer: 0}
@@ -12,7 +14,11 @@ export default class Splash extends Component {
     }
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.titleWrapper}>
+                {/*<Image style={styles.logo} source={require('./../../images/coffee.png')}></Image> */}
+                <Text style={styles.mainTitle}>TEATALK SIREN ORDER</Text>
+                <Text style={styles.mainTitle}>구디의 가장 핫한 카페</Text>
+                <Text></Text>
                 <Image style={styles.logo} source={require('./../../images/coffee.png')}></Image>
             </View>
         )
@@ -20,15 +26,22 @@ export default class Splash extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white',
+    titleWrapper: {
+        backgroundColor: colors.carrot,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
-    title: {
+    logo: {
+        margin: '5%'
+    },
+    mainTitle: {
         fontWeight: 'bold',
+        fontSize: 25,
+        color: colors.white
+    },
+    subTitle: {
         fontSize: 18,
-        color: 'black'
+        color: colors.white
     }
 })

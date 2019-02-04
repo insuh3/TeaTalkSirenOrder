@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 
 import { connect } from "react-redux";
@@ -11,7 +11,7 @@ import CoffeeCreation from "./CoffeeCreation";
 
 import colors from "./../../styles/colors";
 
-class DecksScreen extends Component {
+class DecksScreen extends React.Component {
   static displayName = "DecksScreen";
   static navigationOptions = { title: "COFFEE" };
 

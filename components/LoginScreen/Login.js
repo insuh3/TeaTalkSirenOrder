@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
     Alert,
     AppRegistry,
@@ -14,43 +14,35 @@ import {
     Keyboard,
     KeyboardAvoidingView } from 'react-native';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { name as appName } from './../../app.json';
+import Dimensions from "Dimensions";
+import colors from "./../../styles/colors";
 
-import App from "./../../components/TeaTalkSirenOrder";
+let { height, width } = Dimensions.get("window");
 
-import Splash from './../../components/SplashScreen/Splash';
-
-import DeckScreen from "./../DeckScreen";
-
-
-export default class Login extends Component {
+export default class Login extends React.Component {
+    static navigationOptions = {
+        header: null,
+    };
+    
     _loginPass = () => {
-        // export default createAppContainer(AppNavigator);
-
-        //export default TeaTalkSirenOrder;
-        //this.props.navigation.navigate('DeckScreen');
-        //AppRegistry.registerComponent(appName, () => App);
-        // const Layout = App;
-        return <App />;
-
-        //Alert.alert("H"), "H");
-
+        this.props.navigation.navigate('Menu');
     };
 
     render() {
         return (
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={styles.wrapper}>
                 <StatusBar barStyle="light-content"></StatusBar>
-                    <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
-                        <View style={styles.logoWrapper}>
+                    <View style={styles.topWrapper}>
                             { /*<Image style={styles.logo} source={require('../images/coffee.png')}></Image> */ }
-                            <View style={styles.title}>
-                                <Text style={styles.title}>TEATALK</Text>
-                                <Text style={styles.title}>SIRENORDER</Text>
-                                <Text style={styles.description}>똑똑한 커피문화 만들기</Text>
-                            </View>
-                            <KeyboardAvoidingView style={styles.infoContainer}>
+                        <View style={styles.title}>
+                            <Text style={styles.title}>TEATALK</Text>
+                            <Text style={styles.title}>SIREN ORDER</Text>
+                            <Text style={styles.description}>똑똑한 커피문화 만들기</Text>
+                        </View>
+                        {/* <View style={{flex:1, backgroundColor: 'green'}}>
+                            <Text style={styles.description}>똑똑한 커피문화 만들기</Text>
+                        </View> */}
+                            {/* <KeyboardAvoidingView style={styles.infoContainer}>
                                 <View>
                                     <TextInput style={styles.textInput}
                                         placeholder='사번을 입력하세요.'
@@ -75,91 +67,109 @@ export default class Login extends Component {
                                     </TouchableOpacity>
                                 </View>
                                 
+                            </KeyboardAvoidingView> */}
+                    </View>
+                    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                        <View style={styles.bottomWrapper}>
+                            <KeyboardAvoidingView>
+                                <View style={styles.infoWrapper}>
+                                    <TextInput style={styles.textInput}
+                                        placeholder='사번을 입력하세요.'
+                                        //placeholderTextColor='rgba(255,255,255,0.8)'
+                                        marginTop="10%"
+                                        paddingRight={12}
+                                        paddingLeft={12}
+                                        returnKeyType='next'
+                                        onSubmitEditing={()=> this.refs.textName.focus()}/>
+                                    <TextInput style={styles.textInput}
+                                        placeholder='이름을 입력하세요.'
+                                        //placeholderTextColor='rgba(255,255,255,0.8)'
+                                        marginTop="5%"
+                                        paddingRight={12}
+                                        paddingLeft={12}
+                                        returnKeyType='go'
+                                        ref={'textName'}
+                                    />
+                                    <TouchableOpacity onPress={this._loginPass}>
+                                        <Text style={styles.button}>인 증 하 기</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </KeyboardAvoidingView>
-                        </View>
+                        </View>        
                     </TouchableWithoutFeedback>
             </SafeAreaView>
         )
     }
 }
 
-{
-    /*
-    const DismissKeyboard = ({children}) => (
-    <TouchableWithoutFeedback onPress = {()=> Keyboard.dismiss()>
-        {children}
-    </TouchableWithoutFeedback>
-    });
-    */
-}
-
-
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'black',
+    wrapper: {
         flex: 1,
+        backgroundColor: colors.carrot,
         flexDirection: 'column'
     },
-    logoWrapper: {
-        flex: 1,
+    topWrapper: {
+        flex: 0.5,
         justifyContent: 'center'
     },
-    infoContainer: {
-        justifyContent: 'center',
-        margin: "5%",
-        padding: "5%",
+    bottomWrapper: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    infoWrapper: {
+        backgroundColor: colors.white,
+        width: width * 0.9,
+        height: height * 0.45,
+        alignItems: 'center',
 
-        width: "90%",
-        height: "40%",
-
-        backgroundColor: 'rgba(255,255,255,0.2)',
-        borderRadius: 10
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.43,
+        shadowRadius: 9.51,
+        elevation: 15
     },
     title: {
         marginLeft: '5%',
         color: 'white',
         fontSize: 25,
         fontWeight: 'bold',
-        textAlign: 'left',
-        opacity: 0.9
+        textAlign: 'left'
     },
     description: {
         marginTop: 15,
         marginLeft: '5%',
 
         color: 'white',
-        fontSize: 15,
+        fontSize: 18,
         textAlign: 'left',
     },
-    logo: {
-        marginLeft: 25
-    },
     textInput: {
-        width:'100%',
-        //height: "30%",
-        color: '#FFF',
+        width: width * 0.8,
+        color: colors.gray,
         fontSize: 15,
         fontWeight: 'bold',
-        backgroundColor: 'rgba(255,255,255,0.2)',
-        borderRadius: 10
+        backgroundColor: 'rgba(236,240,241, 1)'
     },
+    shadowStyle: {
 
+    },
     button: {
         alignSelf: 'flex-end',
         marginTop: "5%",
-        //padding: "5%",
 
-        width:"50%",
-        height: "40%",
+        width: width * 0.8,
+        height: height * 0.08,
 
         color: '#FFF',
         textAlign: 'center',
         textAlignVertical: 'center',
         fontSize: 15,
         fontWeight: 'bold',
-        backgroundColor: 'rgba(211,84,0,0.8)',
-        //backgroundColor: 'rgba(#d35400, 0.2)',
+        backgroundColor: colors.carrot,
         borderColor: '#FFF',
-        borderRadius: 10
     }
 });
