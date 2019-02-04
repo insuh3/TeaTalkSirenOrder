@@ -65,7 +65,7 @@ class DecksScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: colors.black, flex: 1, paddingTop: 24 }
+  container: { backgroundColor: colors.white, flex: 1, paddingTop: 24 }
 });
 
 const mapDispatchToProps = dispatch => {

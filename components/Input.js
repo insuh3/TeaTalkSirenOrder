@@ -54,6 +54,16 @@ Input.defaultProps = { clearOnSubmit: true };
 export default Input;
 
 const styles = StyleSheet.create({
-  nameField: { backgroundColor: colors.tan, height: 60 },
-  wideButton: { justifyContent: "center", padding: 10, margin: 10 }
+  nameField: {
+    backgroundColor: colors.beekeeper,
+    height: '60%',
+    //borderColor: colors.black,
+    //borderWidth: 1.5,
+    borderRadius: 10
+  },
+  wideButton: {
+    justifyContent: 'center',
+    padding: 10,
+    margin: 10
+  }
 });

@@ -9,7 +9,7 @@ class CoffeeCreation extends Component {
     this.state = { showingNameField: false };
   }
 
-  _newDeck = name => {
+  _newCoffee = name => {
     this.setState({ showingNameField: false });
     this.props.create(name);
   };
@@ -20,7 +20,7 @@ class CoffeeCreation extends Component {
 
   render() {
     let contents = this.state.showingNameField
-      ? <EnterDeck create={this._newDeck} />
+      ? <EnterDeck create={this._newCoffee} />
       : <CreateCoffeeButton onPress={this._showField} />;
     return contents;
   }

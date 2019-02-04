@@ -14,7 +14,6 @@ import NewCardScreen from "./NewCardScreen";
 import ReviewScreen from "./ReviewScreen";
 
 let store = createStore(reducer);
-
 let headerOptions = {
   headerStyle: { backgroundColor: 'black' },
   headerLeft: <Logo />
@@ -27,7 +26,7 @@ readDecks().then(decks => {
 
 //Navigator를 이용하면, props를 함께 전달받음.
 
-  const makeRootNavigator = createMaterialTopTabNavigator ({
+const makeRootNavigator = createMaterialTopTabNavigator ({
   // const makeRootNavigator = createTabNavigator ({
   Home: { screen: DeckScreen, navigationOptions: headerOptions },
   Review: { screen: ReviewScreen, navigationOptions: headerOptions },

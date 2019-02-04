@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {
+    Alert,
+    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -11,14 +13,37 @@ import {
     SafeAreaView,
     Keyboard,
     KeyboardAvoidingView } from 'react-native';
-    
+
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { name as appName } from './../../app.json';
+
+import App from "./../../components/TeaTalkSirenOrder";
+
+import Splash from './../../components/SplashScreen/Splash';
+
+import DeckScreen from "./../DeckScreen";
+
+
 export default class Login extends Component {
+    _loginPass = () => {
+        // export default createAppContainer(AppNavigator);
+
+        //export default TeaTalkSirenOrder;
+        //this.props.navigation.navigate('DeckScreen');
+        //AppRegistry.registerComponent(appName, () => App);
+        // const Layout = App;
+        return <App />;
+
+        //Alert.alert("H"), "H");
+
+    };
+
     render() {
         return (
             <SafeAreaView style={styles.container}>
                 <StatusBar barStyle="light-content"></StatusBar>
                     <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
-                        <View style={styles.logoContainer}>
+                        <View style={styles.logoWrapper}>
                             { /*<Image style={styles.logo} source={require('../images/coffee.png')}></Image> */ }
                             <View style={styles.title}>
                                 <Text style={styles.title}>TEATALK</Text>
@@ -45,9 +70,9 @@ export default class Login extends Component {
                                         returnKeyType='go'
                                         ref={'textName'}
                                     />
-                                    <TouchableOpacity onPress={this._onPressButton}>
-                                <Text style={styles.button}>로그인</Text>
-                            </TouchableOpacity>
+                                    <TouchableOpacity onPress={this._loginPass}>
+                                        <Text style={styles.button}>로그인</Text>
+                                    </TouchableOpacity>
                                 </View>
                                 
                             </KeyboardAvoidingView>
@@ -69,14 +94,13 @@ export default class Login extends Component {
 }
 
 
-
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'black',
         flex: 1,
         flexDirection: 'column'
     },
-    logoContainer: {
+    logoWrapper: {
         flex: 1,
         justifyContent: 'center'
     },
@@ -92,7 +116,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     title: {
-        marginLeft: "5%",
+        marginLeft: '5%',
         color: 'white',
         fontSize: 25,
         fontWeight: 'bold',
@@ -101,7 +125,7 @@ const styles = StyleSheet.create({
     },
     description: {
         marginTop: 15,
-        marginLeft: "5%",
+        marginLeft: '5%',
 
         color: 'white',
         fontSize: 15,
@@ -111,7 +135,7 @@ const styles = StyleSheet.create({
         marginLeft: 25
     },
     textInput: {
-        width:"100%",
+        width:'100%',
         //height: "30%",
         color: '#FFF',
         fontSize: 15,
@@ -129,13 +153,13 @@ const styles = StyleSheet.create({
         height: "40%",
 
         color: '#FFF',
-        textAlign: "center",
-        textAlignVertical: "center",
+        textAlign: 'center',
+        textAlignVertical: 'center',
         fontSize: 15,
         fontWeight: 'bold',
         backgroundColor: 'rgba(211,84,0,0.8)',
         //backgroundColor: 'rgba(#d35400, 0.2)',
-        borderColor: "#FFF",
+        borderColor: '#FFF',
         borderRadius: 10
     }
 });

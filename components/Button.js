@@ -12,8 +12,7 @@ class Button extends Component {
       <TouchableOpacity
         activeOpacity={opacity}
         onPress={this.props.onPress}
-        style={[styles.wideButton, this.props.style]}
-      >
+        style={[styles.wideButton, this.props.style]}>
         {this.props.children}
       </TouchableOpacity>
     );
@@ -30,6 +29,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     margin: 10,
-    backgroundColor: colors.pink
+    backgroundColor: colors.pink,
+    borderRadius: 10
+  },
+  plusButton: {
+
+  },
+  minusButton: {
+    
   }
 });
