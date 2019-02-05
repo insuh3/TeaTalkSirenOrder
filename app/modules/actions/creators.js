@@ -7,8 +7,8 @@ import {
   LOAD_DATA
 } from "./types";
 
-import Card from "../data/Card";
-import Coffee from "../data/Coffee";
+import Card from "../models/Card";
+import Coffee from "../models/Coffee";
 
 export const addDeck = name => {
   return { type: ADD_DECK, data: new Coffee(name) };

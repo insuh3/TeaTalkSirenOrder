@@ -14,6 +14,8 @@ import {
     Keyboard,
     KeyboardAvoidingView } from 'react-native';
 
+import RootStack from '../../../modules/setup/routes';
+
 import Dimensions from "Dimensions";
 import colors from "./../../styles/colors";
 
@@ -25,7 +27,7 @@ export default class Login extends React.Component {
     };
     
     _loginPass = () => {
-        this.props.navigation.navigate('Menu');
+        this.props.navigation.navigate('Home');
     };
 
     render() {
@@ -33,41 +35,11 @@ export default class Login extends React.Component {
             <SafeAreaView style={styles.wrapper}>
                 <StatusBar barStyle="light-content"></StatusBar>
                     <View style={styles.topWrapper}>
-                            { /*<Image style={styles.logo} source={require('../images/coffee.png')}></Image> */ }
                         <View style={styles.title}>
                             <Text style={styles.title}>TEATALK</Text>
                             <Text style={styles.title}>SIREN ORDER</Text>
                             <Text style={styles.description}>똑똑한 커피문화 만들기</Text>
                         </View>
-                        {/* <View style={{flex:1, backgroundColor: 'green'}}>
-                            <Text style={styles.description}>똑똑한 커피문화 만들기</Text>
-                        </View> */}
-                            {/* <KeyboardAvoidingView style={styles.infoContainer}>
-                                <View>
-                                    <TextInput style={styles.textInput}
-                                        placeholder='사번을 입력하세요.'
-                                        placeholderTextColor='rgba(255,255,255,0.8)'
-                                        marginTop="10%"
-                                        paddingRight={12}
-                                        paddingLeft={12}
-                                        returnKeyType='next'
-                                        onSubmitEditing={()=> this.refs.textName.focus()}
-                                    />
-                                    <TextInput style={styles.textInput}
-                                        placeholder='이름을 입력하세요.'
-                                        placeholderTextColor='rgba(255,255,255,0.8)'
-                                        marginTop="5%"
-                                        paddingRight={12}
-                                        paddingLeft={12}
-                                        returnKeyType='go'
-                                        ref={'textName'}
-                                    />
-                                    <TouchableOpacity onPress={this._loginPass}>
-                                        <Text style={styles.button}>로그인</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                
-                            </KeyboardAvoidingView> */}
                     </View>
                     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                         <View style={styles.bottomWrapper}>
@@ -152,7 +124,7 @@ const styles = StyleSheet.create({
         color: colors.gray,
         fontSize: 15,
         fontWeight: 'bold',
-        backgroundColor: 'rgba(236,240,241, 1)'
+        backgroundColor: 'rgba(236,240,241, 1)',
     },
     shadowStyle: {
 

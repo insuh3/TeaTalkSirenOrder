@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
-import DeckModel from "./../../data/Coffee";
+import DeckModel from "./../../models/Coffee";
 import Button from "./../Button";
 import NormalText from "./../NormalText";
 import colors from "./../../styles/colors";

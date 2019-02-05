@@ -15,11 +15,10 @@ export default class Splash extends React.Component {
     render() {
         return (
             <View style={styles.titleWrapper}>
-                {/*<Image style={styles.logo} source={require('./../../images/coffee.png')}></Image> */}
                 <Text style={styles.mainTitle}>TEATALK SIREN ORDER</Text>
                 <Text style={styles.mainTitle}>구디의 가장 핫한 카페</Text>
                 <Text></Text>
-                <Image style={styles.logo} source={require('./../../images/coffee.png')}></Image>
+                <Image style={styles.logo} source={require('./../../images/logo.png')}></Image>
             </View>
         )
     }

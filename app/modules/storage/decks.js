@@ -1,7 +1,7 @@
 import { AsyncStorage } from "react-native";
-import Coffee from "./../data/Coffee";
+import Coffee from "./../models/Coffee";
 export const DECK_KEY = "flashcards:decks";
-import { MockDecks } from "./../data/Mocks";
+import { MockDecks } from "./../models/Mocks";
 
 async function read(key, deserializer) {
   try {

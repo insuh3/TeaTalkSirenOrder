@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 import { connect } from "react-redux";
 
-import { MockDecks } from "./../../data/Mocks";
+import { MockDecks } from "./../../models/Mocks";
 import { addDeck, reviewDeck } from "./../../actions/creators";
 
 import Coffee from "./Coffee";
@@ -11,8 +11,8 @@ import CoffeeCreation from "./CoffeeCreation";
 
 import colors from "./../../styles/colors";
 
-class DecksScreen extends React.Component {
-  static displayName = "DecksScreen";
+class CoffeeScreen extends React.Component {
+  static displayName = "CoffeeScreen";
   static navigationOptions = { title: "COFFEE" };
 
   _createDeck = name => {
@@ -48,8 +48,7 @@ class DecksScreen extends React.Component {
           }}
           review={() => {
             this._review(deck.id);
-          }}
-        />
+          }}/>
       );
     });
   }
@@ -92,4 +91,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DecksScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(CoffeeScreen);

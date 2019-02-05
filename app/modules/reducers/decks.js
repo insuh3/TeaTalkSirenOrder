@@ -1,5 +1,5 @@
 import { ADD_DECK, ADD_CARD, LOAD_DATA } from "../actions/types";
-import Coffee from "./../data/Coffee";
+import Coffee from "./../models/Coffee";
 import { writeDecks } from "./../storage/decks";
 
 function decksWithNewCard(oldDecks, card) {

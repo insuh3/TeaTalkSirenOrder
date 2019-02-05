@@ -1,4 +1,4 @@
-import { mkReviews } from "./../data/QuizCardView";
+import { mkReviews } from "./../models/QuizCardView";
 import { REVIEW_DECK, NEXT_REVIEW, STOP_REVIEW } from "./../actions/types";
 
 export const mkReviewState = (
